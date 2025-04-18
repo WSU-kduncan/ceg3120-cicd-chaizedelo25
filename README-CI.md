@@ -168,6 +168,6 @@ https://medium.com/@srijaanaparthy/step-by-step-guide-to-install-docker-on-ubunt
 - ![Chatgptdockerchange](chatgpthelpdockerchange.jpg)
 - ![Chatgptentrypoint](chatgpthelpdockerfileentrypoint.jpg)
 - ![Chatgpthelpwithssh](chatgpthelpgithub.jpg)
-  
-
+  - This chatgpt prompt was used for help with my connection to github pushing and pulling that was
+    the need for the help with the resbase pull help. 
 
