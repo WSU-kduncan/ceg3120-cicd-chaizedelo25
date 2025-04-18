@@ -64,6 +64,9 @@
   this step this will not work. Once that is vaildated the next step is to run the command sudo docker build -t firstimage . , the . at the end make
   sure it's in the same directory as the docker file and the firstimage can be any name but that is going to be the name of the image built by the docker instructions.
 
+  - ![dockerfile](dockerfiletwo.jpg)
+
+
   - To run the image from the container that will serve the angular application from the dockerfile will be to use a port bind. This is important because this port bind 
   will allow the angular application to ran from the localhost side. That command will be ```sudo docker run -it - p 4400:4200 firstimage``` , the 4400:4200 is 
   establishes what port angular will be ran on as stated before angular runs on port 4200 so that's the listening port 4400 is the port created to run.
