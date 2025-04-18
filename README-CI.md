@@ -102,4 +102,7 @@
   the same directory of where the angular app is. Once that command is run as well as the login is a success now it's time to push with the command
   sudo docker push wsudeloach/deloach-ceg3120 this will push the images to the dockerfile repo.
 
+
+
+  - Link to dockerhub repo: https://hub.docker.com/r/wsudeloach/deloach-ceg3120 
 ## Part 2 - Github Actions and DockerHub
