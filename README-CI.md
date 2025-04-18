@@ -2,7 +2,6 @@
 
 
 ## Part 1 : Docker-ize it
-  - Docker Setup
   - To install Docker Desktop it's best to go to a browser and type in Docker.com. Once on the site it should be a download button that allows downloads.
 
   - Now any device running anything on Windows 11 or higher docker desktop won't work and it's best to install docker on an instance. In my case I had
@@ -146,5 +145,19 @@
 
 
 ## Citations: 
+https://github.com/marketplace/actions/build-and-push-docker-images
+https://youtu.be/R8_veQiYBjI?si=c3BUHen85B-H3CkS
+https://gitlab.com/nanuchi/youtube-tutorial-series/-/blob/master/github-actions/links.md
+https://docs.github.com/en/actions/writing-workflows/choosing-when-your-workflow-runs/events-that-trigger-workflows#push
+https://docs.docker.com/build/ci/github-actions/ 
+https://dev.to/rodrigokamada/creating-and-running-an-angular-application-in-a-docker-container-40mk
+https://github.com/nodejs/docker-node/blob/ba2b3e61e6aaf4643108fb5f1cda9ee5238efde5/18/bullseye/Dockerfile
+https://docs.docker.com/build/ci/github-actions/
+https://docs.docker.com/build/ci/github-actions/secrets/
+https://medium.com/@srijaanaparthy/step-by-step-guide-to-install-docker-on-ubuntu-in-aws-a39746e5a63d
+
+
+## Ciations: Chatgpt
+
 
 
