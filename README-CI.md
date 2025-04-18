@@ -68,7 +68,7 @@
   sure it's in the same directory as the docker file and the firstimage can be any name but that is going to be the name of the image built by the docker instructions.
 
   - To run the image from the container that will serve the angular application from the dockerfile will be to use a port bind. This is important because this port bind 
-  will allow the angular application to ran from the localhost side. That command will be sudo docker run -it - p 4400:4200 firstimage , the 4400:4200 is 
+  will allow the angular application to ran from the localhost side. That command will be ```sudo docker run -it - p 4400:4200 firstimage``` , the 4400:4200 is 
   establishes what port angular will be ran on as stated before angular runs on port 4200 so that's the listening port 4400 is the port created to run.
   The commands -it let's the user interact with the container and -p helps establish the port set up.
 
@@ -106,6 +106,39 @@
   - Picture of dockerhub push
 
   - Link to dockerhub repo: https://hub.docker.com/repository/docker/wsudeloach/deloach-ceg3120/general  
+
+
 ## Part 2 - Github Actions and DockerHub
 
+  - To create a PAT in github, the first thing to do is go to settings and then go to developer settings. In the left sidebar, under
+   Personal access tokens, click classic tokens he reason for classic tokens instead of fine-grained is  because while
+   fine-grained are more secure than classic tokens, classic tokens allow for more access to public repos. Next click Generate new token, under Token name, 
+  enter a name for the token in this case mines is name Project-4Token.The expiration date can be never but in terms of security probably not the best
+  option. The scope I've given the key is to be able to have access to the repo, the workflow, and the codespace. 
+
+
+ 
+
   - 
+
+
+
+
+
+
+
+## Part 3 - Project Description and Diagram 
+
+  - 
+
+
+
+
+
+
+
+
+
+
+
+## Citations: 
