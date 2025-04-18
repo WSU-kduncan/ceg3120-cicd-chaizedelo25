@@ -74,7 +74,8 @@
 
   - To vaildate that the dockerfile is running the image on the container side run the command ```sudo docker run -p 4400:4200```
 
-  - To vaildate that the dockerfile is running the image on the host side we run ```http://localhost:4400.```
+  - To vaildate that the dockerfile is running the image on the host side we run ```http://localhost:4400.```, this localhost will be 
+  the ip address used to connect to the aws instance in our case. 
 
   - Picture of dockerfile
 
@@ -102,7 +103,9 @@
   the same directory of where the angular app is. Once that command is run as well as the login is a success now it's time to push with the command
   sudo docker push wsudeloach/deloach-ceg3120 this will push the images to the dockerfile repo.
 
+  - Picture of dockerhub push
 
-
-  - Link to dockerhub repo: https://hub.docker.com/r/wsudeloach/deloach-ceg3120 
+  - Link to dockerhub repo: https://hub.docker.com/repository/docker/wsudeloach/deloach-ceg3120/general  
 ## Part 2 - Github Actions and DockerHub
+
+  - 
