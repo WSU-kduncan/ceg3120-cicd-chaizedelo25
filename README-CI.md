@@ -94,7 +94,7 @@
    This username will be the username created when making the docker account, the password will be the PAT token. Once there's a successful login, 
    they'll be a notification saying so.
 
-  - ![Loginsuccess](birdshavegonewild.jpg)
+  - ![Loginsuccess](dockerloginsucess.jpg)
 
   - To push a container image to the dockerhub repository, the first thing to do is to make sure to run the command ```sudo docker build -t wsudeloach/deloach-ceg3120 .```
    (this is the public repos title). This is important because it'll build that image for our public repo, this command also needs to be run in 
@@ -147,8 +147,8 @@
   
 
   - Diagram:
-    - ![dockerhubdiagram](dockerhubdiagram.jpg)
-    - ![githubdiagram](githubdiagram.jpg)
+    - ![dockerhubdiagram](dockerhubdiagram.JPG)
+    - ![githubdiagram](githubdiagram.JPG)
 
 ## Citations: 
 https://github.com/marketplace/actions/build-and-push-docker-images
@@ -168,6 +168,6 @@ https://medium.com/@srijaanaparthy/step-by-step-guide-to-install-docker-on-ubunt
 - ![Chatgptdockerchange](chatgpthelpdockerchange.jpg)
 - ![Chatgptentrypoint](chatgpthelpdockerfileentrypoint.jpg)
 - ![Chatgpthelpwithssh](chatgpthelpgithub.jpg)
-
+  
 
 
