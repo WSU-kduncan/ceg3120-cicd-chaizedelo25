@@ -21,9 +21,9 @@
 
 
 
-  2. Manually Setting up a Container
+  ## Manually Setting up a Container
 
-   - Before running the container we need to first build a folder called angular-site on our local machines.
+  - Before running the container we need to first build a folder called angular-site on our local machines.
   This is very important because in this file folder  we will extract the angular.zip file into this one locally.
   This is important because once we run the container, we're going to want the unzipped file inside of the container itself. 
   
@@ -35,7 +35,8 @@
 
   ```sudo docker run -it -v /home/ubuntu/ceg3120-cicd-chaizedelo25/ceg3120-cicd-chaizedelo25:/angular node:18-bullseye bash```
   
-  - Once that command is run, we'll now be able to install angular within the container. My unzipped file was nested within my directory so I ran the commands
+  - It's important to run bash because without that we'll be in the node shell not the bash shell
+  Once that command is run, we'll now be able to install angular within the container. My unzipped file was nested within my directory so I ran the commands
   ```cd angular-site```, ```cd angular```, and then ```cd wsu-hw-ng-main``` this was crucuial because this is where my angular file needs to be serve as my unzipped
    file is the wsu-hw-ng-main. 
    
@@ -47,7 +48,7 @@
   - To validate  this is working from the container side that's where the  ```ng serve --host 0.0.0.0``` command comes into play.
 
   - To validate this is working on the host side run curl localhost:4200 in a new terminal side, now since this is being run on an AWS instance the curl localhost 
-  should be ```curl localhost:4200``` iand making sure security groups allow port 4200 connections are important too. 
+  should be ```curl localhost:4200``` and making sure security groups allow port 4200 connections are important too. 
 
   
 
@@ -58,7 +59,7 @@
 
   
 
-  3. Dockerfile & Building Images
+  ##  Dockerfile & Building Images
 
   - Dockerfiles are files that create containers from a specific set of instructions. In constrast to how we manually built the angular
   file in the last step the dockerfile in sense does it for you but requires different steps. My Dockerfile has a 
@@ -80,9 +81,62 @@
   run the angular.
 
 
- - Building the image from the dockerfile repository is to make sure the dockerfile an the angular unzipped file are 
+
+  - Building the image from the dockerfile repository is to make sure the dockerfile an the angular unzipped file are 
   in the same directory without this step this will not work. Once that is vaildated the next step is to run the command
-  ```sudo docker build -t firstimage .``` , the firstimage can be any name but that is going to be the name of the image
-  built by the docker instructions.
+  ```sudo docker build -t firstimage .``` , the . at the end make sure it's in the same directory as the docker file and 
+   the firstimage can be any name but that is going to be the name of the image built by the docker instructions.
+
+  
+  - To run the image from the container that will serve the angular application from the dockerfile will be to use a port bind.
+  This is important because this port bind will allow the angular application to ran from the localhost side. That command will be 
+  ```sudo docker run -it - p 4400:4200 firstimage``` , the 4400:4200 is establishes what port angular will be ran on as stated
+  before angular runs on port 4200 so that's the listening port 4400 is the port created to run. The commands ```-it``` let's 
+  the user interact with the container and ```-p``` helps establish the port set up.
+
+
+  - To vaildate that the dockerfile is running the image on the container side run the command ```docker run -p 4400:4200```
+
+  - To vaildate that the dockerfile is running the image on the host side we run ```http://localhost:4400```.
+
+
+  - Picture of dockerfile
+
+  - Picture of angularsite 
+
+
+## Working with your DockerHub Repository
+
+  - To create a dockerhub repo go to dockerhub.com and once on that website create an account. 
+  Once the account is created got the myhub section and and click on repositories and then select
+  create a repository. Once there create a name, make a short description, and make sure the public
+  option is chosen. Then select create.
+
+
+  - To create a PAT (Personal Access Token) in dockerhub go to account settings and then select
+  personal access tokens. Once there select generate new token and the scope for this PAT will be
+  Read and Write because we want to be able to push and add images to this repository. We'll make
+  the expiration date never on this so it won't run out. 
+
+
+  - To authenticate with DockerHub run the command ```sudo docker login``` once entering that 
+  in the command line terminal docker will ask for a username and password. This username 
+  will be the username created when making the docker account, the password will be the PAT
+  token. Once there's a successful login, they'll be a notification saying so. 
+
+  - Picture of login success 
+
+
+  - To push a container image to the dockerhub repository, the first thing to do is to make sure
+  to run the command ```sudo docker build -t wsudeloach/deloach-ceg3120``` .  (this is the public repos title). 
+  This is important because it'll build that image for our public repo, this command also needs to be 
+  run in the same directory of where the angular app is. Once that command is run as well as the login
+  is a success now it's time to push with the command ```sudo docker push wsudeloach/deloach-ceg3120```
+  this will push the images to the dockerfile repo. 
+
+  
+## Part 2 - Github Actions and DockerHub
+
+
 
 
