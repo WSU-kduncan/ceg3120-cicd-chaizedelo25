@@ -23,5 +23,6 @@ jobs:
         name: Build and push
         uses: docker/build-push-action@v6
         with:
+          context: "{{defaultContext}}:angular-site"
           push: true
           tags: wsudeloach/deloach-ceg3120:latest
