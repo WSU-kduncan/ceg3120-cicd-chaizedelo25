@@ -111,34 +111,40 @@
 ## Part 2 - Github Actions and DockerHub
 
   - To create a PAT in github, the first thing to do is go to settings and then go to developer settings. In the left sidebar, under
-   Personal access tokens, click classic tokens he reason for classic tokens instead of fine-grained is  because while
-   fine-grained are more secure than classic tokens, classic tokens allow for more access to public repos. Next click Generate new token, under Token name, 
-  enter a name for the token in this case mines is name Project-4Token.The expiration date can be never but in terms of security probably not the best
-  option. The scope I've given the key is to be able to have access to the repo, the workflow, and the codespace. 
+   Personal access tokens, click classic tokens he reason for classic tokens instead of fine-grained is  because while fine-grained are more secure than classic tokens,
+   classic tokens allow for more access to public repos. Next click Generate new token, under Token name, enter a name for the 
+   token in this case mines is name Project-4Token.The expiration date can be never but in terms of security probably not the best
+   option. The scope I've given the key is to be able to have access to the repo, the workflow, and the codespace. 
 
 
- 
-
-  - 
-
-
+   - Workflows in github are a way of automating a process that helps the user not have to build it manually. In this project we 
+  used a github workflow to push the images created from the dockerfile to dockehub. When using the workflow it's important to make the github
+  action variables for the docker login. Once these are in the serect variables we  can use it now in the github workflow. 
 
 
+  - It's important to note that when your dockerfile is in a subdirectory it's important to subdir command within the workflow commands. 
+
+  - Link to workflow: https://github.com/WSU-kduncan/ceg3120-cicd-chaizedelo25/blob/main/.github/workflows/project4.yml 
 
 
 
 ## Part 3 - Project Description and Diagram 
 
-  - 
+  - The goal of this project is to build a container image that runs on an angular app. We had to do this manually,
+  with a dockerfile, and with github actions. 
+
+  - The tools used in this project are angular, dockerhub, dockerfiles, and the
+  aws instances.
 
 
+  - Things that aren't working so far in the project is making sure that in the future
+  to put the Dockerfile in the github's repo out of a subdirectory. This would make the process
+  of the workflow easier. 
+  
 
-
-
-
-
-
-
+  - Diagram: 
 
 
 ## Citations: 
+
+
