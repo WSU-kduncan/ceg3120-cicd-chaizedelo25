@@ -66,6 +66,7 @@
 
   - ![dockerfile](dockerfiletwo.jpg)
 
+   - My dockerfile is located in the subdirectory in my angular-site. 
 
   - To run the image from the container that will serve the angular application from the dockerfile will be to use a port bind. This is important because this port bind 
   will allow the angular application to ran from the localhost side. That command will be ```sudo docker run -it - p 4400:4200 firstimage``` , the 4400:4200 is 
