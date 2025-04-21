@@ -15,8 +15,6 @@
   this will add the tag to make to the main branch. After that command run ```git push origin v.*.*.*```.
   This command will push the tag to the github repo.
 
-  - ![taggingimages](tagimagesshown.jpg)
-
     
   - ![taggedimagetopush](tagpushedtorepo.jpg)
 
