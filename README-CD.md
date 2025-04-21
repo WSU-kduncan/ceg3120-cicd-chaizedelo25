@@ -15,9 +15,10 @@
   this will add the tag to make to the main branch. After that command run ```git push origin v.*.*.*```.
   This command will push the tag to the github repo.
 
-  - Picture of git tag
+  - ![taggingimages](tagimagesshown.jpg)
 
-  - Picture of git push
+    
+  - ![taggedimagetopush](tagpushedtorepo.jpg)
 
 
 ## CI with GitHub Actions
@@ -63,6 +64,16 @@
   - To vaildate the workflow worked on the dockerhub repo side log into the dockerhub repo and check the tag section, there will be 
   the pushed tags from the github workflow.
 
-  - Picture of tags in dockerhub repo
+    
+  - ![dockerhubtags](dockerpushtorepo.jpg)
 
-  - Picture of workflow 
+ 
+  - ![workflowimage](actualdockerfileupdatedworkingprojectfive.jpg)
+
+## Ciations
+  - https://semver.org/
+  - https://www.restack.io/p/github-actions-docker-setup-answer-cat-ai
+  - https://spacelift.io/blog/github-actions-checkout
+  - https://github.com/docker/metadata-action?tab=readme-ov-file#semver
+  - https://forums.docker.com/t/error-docker-buildx-build-requires-exactly-1-argument-with-vs-code/136577/9
+  - https://docs.docker.com/build/ci/github-actions/manage-tags-labels/ 
