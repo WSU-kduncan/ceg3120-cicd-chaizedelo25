@@ -2,7 +2,6 @@
 
 
 ## Part 1 : Docker-ize it
-  - Docker Setup
   - To install Docker Desktop it's best to go to a browser and type in Docker.com. Once on the site it should be a download button that allows downloads.
 
   - Now any device running anything on Windows 11 or higher docker desktop won't work and it's best to install docker on an instance. In my case I had
@@ -39,9 +38,7 @@
   - To validate this is working on the host side run curl localhost:4200 in a new terminal side, now since this is being run on an AWS instance
    the curl localhost should be ```curl localhost:4200```  and making sure security groups allow port 4200 connections are important too.
 
-  - Picture of angular site working manually from ng serve.
-
-  - Picture of angular site working from host.
+  - ![Ng serve angular working](angularworks.jpg)
 
 
 
@@ -67,6 +64,10 @@
   this step this will not work. Once that is vaildated the next step is to run the command sudo docker build -t firstimage . , the . at the end make
   sure it's in the same directory as the docker file and the firstimage can be any name but that is going to be the name of the image built by the docker instructions.
 
+  - ![dockerfile](dockerfiletwo.jpg)
+
+   - My dockerfile is located in the subdirectory in my angular-site. 
+
   - To run the image from the container that will serve the angular application from the dockerfile will be to use a port bind. This is important because this port bind 
   will allow the angular application to ran from the localhost side. That command will be ```sudo docker run -it - p 4400:4200 firstimage``` , the 4400:4200 is 
   establishes what port angular will be ran on as stated before angular runs on port 4200 so that's the listening port 4400 is the port created to run.
@@ -77,9 +78,10 @@
   - To vaildate that the dockerfile is running the image on the host side we run ```http://localhost:4400.```, this localhost will be 
   the ip address used to connect to the aws instance in our case. 
 
-  - Picture of dockerfile
+  - ![Localhostworkingangular](angularlistening.jpg)
+  - ![Angularworking](angularworks.jpg)
 
-  - Picture of angularsite
+  - ![Pictureofdockerhubfile](birdshavegonewild.jpg)
 
 
 
@@ -96,14 +98,14 @@
    This username will be the username created when making the docker account, the password will be the PAT token. Once there's a successful login, 
    they'll be a notification saying so.
 
-  - Picture of login success
+  - ![Loginsuccess](dockerloginsucess.jpg)
 
   - To push a container image to the dockerhub repository, the first thing to do is to make sure to run the command ```sudo docker build -t wsudeloach/deloach-ceg3120 .```
    (this is the public repos title). This is important because it'll build that image for our public repo, this command also needs to be run in 
   the same directory of where the angular app is. Once that command is run as well as the login is a success now it's time to push with the command
   sudo docker push wsudeloach/deloach-ceg3120 this will push the images to the dockerfile repo.
 
-  - Picture of dockerhub push
+  -  ![Dockerhubpush](dockerpushtorepo.jpg)
 
   - Link to dockerhub repo: https://hub.docker.com/repository/docker/wsudeloach/deloach-ceg3120/general  
 
@@ -121,6 +123,12 @@
   used a github workflow to push the images created from the dockerfile to dockehub. When using the workflow it's important to make the github
   action variables for the docker login. Once these are in the serect variables we  can use it now in the github workflow. 
 
+  - ![Workflow](dockeryamlfileworking.jpg)
+
+  - These action variables are also known as sercets and they're hidden which is useful as this will be our login credintials
+    for dockerhub.
+
+  - ![Sercets](githubsercets.jpg)
 
   - It's important to note that when your dockerfile is in a subdirectory it's important to subdir command within the workflow commands. 
 
@@ -142,9 +150,28 @@
   of the workflow easier. 
   
 
-  - Diagram: 
-
+  - Diagram:
+    - ![dockerhubdiagram](dockerhubdiagram.JPG)
+    - ![githubdiagram](githubdiagram.JPG)
 
 ## Citations: 
+https://github.com/marketplace/actions/build-and-push-docker-images
+https://youtu.be/R8_veQiYBjI?si=c3BUHen85B-H3CkS
+https://gitlab.com/nanuchi/youtube-tutorial-series/-/blob/master/github-actions/links.md
+https://docs.github.com/en/actions/writing-workflows/choosing-when-your-workflow-runs/events-that-trigger-workflows#push
+https://docs.docker.com/build/ci/github-actions/ 
+https://dev.to/rodrigokamada/creating-and-running-an-angular-application-in-a-docker-container-40mk
+https://github.com/nodejs/docker-node/blob/ba2b3e61e6aaf4643108fb5f1cda9ee5238efde5/18/bullseye/Dockerfile
+https://docs.docker.com/build/ci/github-actions/
+https://docs.docker.com/build/ci/github-actions/secrets/
+https://medium.com/@srijaanaparthy/step-by-step-guide-to-install-docker-on-ubuntu-in-aws-a39746e5a63d
 
+
+## Chatgpt Ciations:
+- ![Chatgptdockerfile](chatgptdockerfile.jpg)
+- ![Chatgptdockerchange](chatgpthelpdockerchange.jpg)
+- ![Chatgptentrypoint](chatgpthelpdockerfileentrypoint.jpg)
+- ![Chatgpthelpwithssh](chatgpthelpgithub.jpg)
+  - This chatgpt prompt was used for help with my connection to github pushing and pulling that was
+    the need for the help with the resbase pull help. 
 
