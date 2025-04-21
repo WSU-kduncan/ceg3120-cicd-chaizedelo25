@@ -65,7 +65,7 @@
   the pushed tags from the github workflow.
 
     
-  - ![dockerhubtags](dockerpushtorepo.jpg)
+  - ![dockerhubtags](dockerhubtagsinrepo.jpg)
 
  
   - ![workflowimage](actualdockerfileupdatedworkingprojectfive.jpg)
