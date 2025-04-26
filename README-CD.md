@@ -124,10 +124,24 @@
   - To verify that the angular app is working on the container side running the command ```ng serve --host 0.0.0.0```
   allows the user to see the angular app on the container side. 
 
-  -  To verify that the container is running on the host side run curl localhost:4200 in a new terminal side,
-   now since this is being run on an AWS instance the curl localhost should be curl localhost:4200 and making sure security groups allow port 4200 connections are important too.
 
+  - To verify that the container is running on the host side run curl localhost:4200 in a new terminal side,
+   now since this is being run on an AWS instance the curl localhost should be curl localhost:4200 and making
+   sure security groups allow port 4200 connections are important too.
 
+  - To verify on the external side in a browser since this is a aws instance where this is being hosted runn ubuntu's public IP address
+  in a browser with the port added on to angular app side. This would be http://localhost:42000.
+
+  - The steps to manually make sure that the container is getting the latest uploads from Dockerhub:
+
+  1. ```sudo docker pull wsudeloach/deloach-ceg3120: latest``` (this command pulls from the dockerhub repo
+  to the terminal with the latest images)
+
+  2.```docker run -it -p 4400:4200 --rm  wsudeloach/deloach-ceg3120:latest``` (this removes the container process after 
+  the process is exited)
+
+  3. ```curl localhost:4400``` and ```http:publicip:4200```(these commands are important because this tests for 
+  updates to the the new changes manaully on the
 
 
 
