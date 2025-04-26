@@ -69,6 +69,75 @@
  
   - ![workflowimage](actualdockerfileupdatedworkingprojectfive.jpg)
 
+
+
+
+
+
+## Part 2 - Depolyment 
+
+
+
+## Instance Details
+
+  - The AMI used for this instance is the Ubuntu server 24.04 LTS.
+
+  - The instance type is t2.medium.
+
+  - The volume size is 30 GB.
+
+  - The security group I chose are allowing the connection from Wright State's IP, my dorm room's IP, and my 
+  home's IP address. I also added in the inbound rule of a connection on the ports 4200 and 9000. I made the 
+  inbound rules for these ports because these ports are needed for our webhooks and the angular site.
+
+
+## Docker Setup on OS on the EC2 instance 
+
+ - These are the following steps that I took to download Docker on my AWS instance:
+
+ 1. ```sudo apt-get update``` (running this command first makes sure the instance is 
+ up to date)
+
+ 2. ```sudo apt-get install docker.io -y``` (running this command installs docker on the instance)
+
+ 3. ```sudo systemctl start docker```(this command makes sure that docker is started on the instance and 
+ is ready to use)
+
+ 4. ```sudo systemctl enable docker``` (this command makes sure that everytime the instance is started docker is 
+ started)
+
+
+## Testing on EC2 instance
+
+  - To pull the image from DockerHub you can run the command ```sudo docker pull hello-world```
+  but in this case it'll be ```docker pull node:18-bullseye```.
+   - Using sudo in this process because of permissions of the daemon process, can be fixed by running
+  the command ```sudo usermod -aG docker $USER```.
+
+  - To run the container from the image run the command in this example ```sudo docker run hello-world```
+  and ```sudo docker run node:18-bullseye```.
+
+  - The difference between the ```-it``` flag and the ```-d``` flag is that the the ```-it``` flag
+  is that the ```-it``` flag allows the user to interact with the container so you can see what's being
+  run. While the ```-d``` flag is the command that run the process more so in the background.
+
+  - To verify that the angular app is working on the container side running the command ```ng serve --host 0.0.0.0```
+  allows the user to see the angular app on the container side. 
+
+  -  To verify that the container is running on the host side run curl localhost:4200 in a new terminal side,
+   now since this is being run on an AWS instance the curl localhost should be curl localhost:4200 and making sure security groups allow port 4200 connections are important too.
+
+
+
+
+
+
+
+
+
+
+
+
 ## Ciations
   - https://semver.org/
   - https://www.restack.io/p/github-actions-docker-setup-answer-cat-ai
