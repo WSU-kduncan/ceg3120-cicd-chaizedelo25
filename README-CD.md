@@ -134,14 +134,40 @@
 
   - The steps to manually make sure that the container is getting the latest uploads from Dockerhub:
 
-  1. ```sudo docker pull wsudeloach/deloach-ceg3120: latest``` (this command pulls from the dockerhub repo
-  to the terminal with the latest images)
+  1. The first step is to kill the container that is running with the old images in this case it will be ```docker
+  kill wsudeloach/deloach-ceg3120:latest```
 
-  2.```docker run -it -p 4400:4200 --rm  wsudeloach/deloach-ceg3120:latest``` (this removes the container process after 
-  the process is exited)
+  2. Once the previous process is killed the next step is to run the command ```docker run -it -p 4400:4200 --rm  wsudeloach/deloach-ceg3120:latest``` 
+  (this removes the container process after the process is exited)
 
-  3. ```curl localhost:4400``` and ```http:publicip:4200```(these commands are important because this tests for 
-  updates to the the new changes manaully on the
+  3. Then once this pull run the process with the command ```docker run -d -p 4400:4200 --name wudeloach --restart=always```(this gives the container 
+  a name so it's easier to reference and the restart always makes sure that the container is restarted unless the user turns it off)
+
+
+## Scripting Container Application Refresh
+
+  - To have a bash script that will kill and remove the previosuly running container within the bash script 
+  in the beginning there's needs to be ```#!/bin/bash``` (this is important because it gives the script a shell).
+  The commands needed in the script are ```docker kill banana``` and ```docker rm banana```.
+
+
+  - To pull the container image from the repository ```docker pull wsudeloach/deloach-ceg3120:latest```
+
+  - To start the container process with the new image run the command ```docker run -d -p 4400:4200 name banana --restart=always``` within 
+  the bash script.
+
+
+  - To know that the script worked run the command ```./updatedscript``` or what the name of the script is this will run the script
+  and you can see the updated images internally with the ```docker ps -a``` command to see the banana name and when running the script
+  it should say already exists to know the updates have worked.
+
+
+
+  - Link to script:
+
+  - Picture of script
+
+  - Picture of running script
 
 
 
