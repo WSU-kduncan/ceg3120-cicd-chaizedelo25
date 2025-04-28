@@ -150,6 +150,7 @@
   in the beginning there's needs to be ```#!/bin/bash``` (this is important because it gives the script a shell).
   The commands needed in the script are ```docker kill banana``` and ```docker rm banana```.
 
+  - It's also very imortant to note that bash script only needs chmod +x to be executable besides other users.
 
   - To pull the container image from the repository ```docker pull wsudeloach/deloach-ceg3120:latest```
 
@@ -170,6 +171,47 @@
   - Picture of running script
 
 
+
+
+## Configuring a webhook listner on EC2 instance
+
+
+  - To install adnah's webhook the first thing to do is run the command ```sudo apt install webhook```.
+
+  - To verify the installation was successful run the command ```which webhook``` also starting webhook will show this 
+  as well the command for this is ```sudo systemctl status webhook.service```.
+
+  - The defintion of the webhook is a tool that allows you to create HTTP endpoints (hooks) on the  server, 
+  which you can use to execute configured commands.
+
+  - To verfy this defintion was met by checking for the traffic on port 9000.
+
+  - To verify that the webhook is triggered is by running the command 
+  ``` webhook -hooks hooks.json -verbose``` on one terminal and on the other run the command
+  ```curl localhost:9000/hooks/orange```. After the curl localhost command is run on the other terminal
+  in the webhook logs there should be some traffic on that side that shows the webhook being met and connecting to 
+  to the dockerhub repo.
+
+  - To verfy on the dockerhub side enter in the http:localhost:9000/hooks/orange in the webhooks section within the 
+  docker hub repo. After a new change is made in the dockerhub repo section in the history there should be success when seeing 
+  the new changes from the updated repo to the webhook. 
+
+
+  - Picture of webhook file 
+
+  - Picture of logs 
+
+  - Picture of dockerhub
+
+
+
+## Configuring a Payload Sender 
+
+  - The payload sender I'm going to choose is Dockerhub. I'm going to use dockerhub cause I feel dockerhub allows for more
+  control on how to set up the payload sender and more edit control since it happens a lot more frequently with dockerhub.
+
+  - 
+  
 
 
 
