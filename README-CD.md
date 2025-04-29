@@ -8,7 +8,7 @@
     that will allow us to get automatic updates when a new change happens in dockerhub.
 
     ## Diagram:
-    - ![diagrampicture]
+    - ![diagrampicture](projectfivediagram.jpg)
 
 
 ## Part 1 - Semantic Versioning
@@ -182,8 +182,6 @@
   - It's important to note that having sudo commands within the bash script is not ideal this is only because of the previous statement
     with the permissions and dameon.
 
-  - ![containerworking](refreshcontainernewscriptworking.jpg)
-
 
 
 
@@ -213,9 +211,12 @@
 
   - ![webhookcontents](webhookcontents.jpg)
 
+  - ![curlprocess](curllocalhostrefresh.jpg)
+
   - ![hooklogs](hookslogsaftercurl.jpg)
 
  - ![containerworking](refreshcontainernewscriptworking.jpg)
+   
 
   - Picture of dockerhub
 
@@ -236,6 +237,8 @@
   if that file doesn't exist the webhook won't start. The service file won't work at all without the configuration 
   file being configured.
 
+  - ![servicepicture](servicewebhookconfiguration.jpg)
+
 
   - To enable the service  
   
@@ -247,10 +250,14 @@
 
 
 
-## Ciations
+## Ciations and Resources
   - https://semver.org/
   - https://www.restack.io/p/github-actions-docker-setup-answer-cat-ai
   - https://spacelift.io/blog/github-actions-checkout
   - https://github.com/docker/metadata-action?tab=readme-ov-file#semver
   - https://forums.docker.com/t/error-docker-buildx-build-requires-exactly-1-argument-with-vs-code/136577/9
-  - https://docs.docker.com/build/ci/github-actions/manage-tags-labels/ 
+  - https://docs.docker.com/build/ci/github-actions/manage-tags-labels/
+  - https://docs.docker.com/docker-hub/repos/manage/webhooks/
+  - https://askubuntu.com/questions/635779/e45-readonly-option-is-set-add-to-override
+  - https://blog.devgenius.io/build-your-first-ci-cd-pipeline-using-docker-github-actions-and-webhooks-while-creating-your-own-da783110e151
+  - lucidchart.com
