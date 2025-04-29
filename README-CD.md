@@ -176,7 +176,7 @@
 
 
 
-  - Link to script:
+  - Link to script: https://github.com/WSU-kduncan/ceg3120-cicd-chaizedelo25/blob/main/refreshcontainer.sh
 
   - ![bashscriptcontents](refreshcontainercontents.jpg)
   - It's important to note that having sudo commands within the bash script is not ideal this is only because of the previous statement
