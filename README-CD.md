@@ -220,7 +220,7 @@
 
   - Picture of dockerhub
 
-
+  - Link to hooksfile: https://github.com/WSU-kduncan/ceg3120-cicd-chaizedelo25/blob/main/hooks.json
 
 ## Configuring a Payload Sender 
 
