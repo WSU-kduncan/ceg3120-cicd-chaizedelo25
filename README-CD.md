@@ -91,6 +91,9 @@
   inbound rules for these ports because these ports are needed for our webhooks and the angular site.
 
 
+- ![securityinboundrules](webhookportssecuritygroupadded.jpg)
+
+
 ## Docker Setup on OS on the EC2 instance 
 
  - These are the following steps that I took to download Docker on my AWS instance:
@@ -166,9 +169,9 @@
 
   - Link to script:
 
-  - Picture of script
+  - ![bashscriptcontents](refreshcontainercontents.jpg.jpg)
 
-  - Picture of running script
+  - ![containerworking](refreshcontainernewscriptworking.jpg)
 
 
 
@@ -199,7 +202,7 @@
 
   - Picture of webhook file 
 
-  - Picture of logs 
+  - ![hooklogs](hookslogsaftercurl.jpg)
 
   - Picture of dockerhub
 
