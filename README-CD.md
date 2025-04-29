@@ -1,5 +1,14 @@
 # Project 5 
 
+## Continuous Deployment Project Overview
+  - In this project we are continuing on from Project 4, we'll be using continuous deployment.
+    We'll do this by having github tag images for us being triggered with the workflow action so when an
+    a new change is made to our app it'll trigger a tag. We'll then use an instance to host a webhook that will
+    allow us to get the newest images running the process from Dockerhub. In addition we'll be using a bash script
+    that will allow us to get automatic updates when a new change happens in dockerhub.
+
+    ## Diagram:
+    - ![diagrampicture]
 
 
 ## Part 1 - Semantic Versioning
@@ -169,7 +178,9 @@
 
   - Link to script:
 
-  - ![bashscriptcontents](refreshcontainercontents.jpg.jpg)
+  - ![bashscriptcontents](refreshcontainercontents.jpg)
+  - It's important to note that having sudo commands within the bash script is not ideal this is only because of the previous statement
+    with the permissions and dameon.
 
   - ![containerworking](refreshcontainernewscriptworking.jpg)
 
@@ -200,7 +211,7 @@
   the new changes from the updated repo to the webhook. 
 
 
-  - Picture of webhook file 
+  - ![webhookcontents](Screenshot 2025-04-28 151752.jpg)
 
   - ![hooklogs](hookslogsaftercurl.jpg)
 
