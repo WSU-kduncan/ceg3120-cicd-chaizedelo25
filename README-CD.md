@@ -100,7 +100,7 @@
   inbound rules for these ports because these ports are needed for our webhooks and the angular site.
 
 
-- ![securityinboundrules](webhookportssecuritygroupadded.jpg)
+- ![securityinboundrules](webhookportsecuritygroupadded.jpg)
 
 
 ## Docker Setup on OS on the EC2 instance 
