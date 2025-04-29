@@ -1,0 +1,6 @@
+[
+  {
+    "id": "orange",
+    "execute-command": "/home/ubuntu/refreshcontainer.sh"
+  }
+]
