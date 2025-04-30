@@ -225,12 +225,12 @@
 
   - This is what I got from the ```docker ps -a``` command:
 
-   - ![picture of docker ps]()
+   - ![picture of docker ps](dockerpsaangularon.jpg)
 
    - Then after some digging I realized since I didn't have an Elastic IP it changed everytime and I realized that's why my webhook didn't
      work!
 
-   -![picture of dockerhub success](dockerhubwebhookadded.jpg)
+   -![picture of dockerhub success](dockerhubwebhookworking.jpg)
 
   - Link to hooksfile: https://github.com/WSU-kduncan/ceg3120-cicd-chaizedelo25/blob/main/hooks.json
 
