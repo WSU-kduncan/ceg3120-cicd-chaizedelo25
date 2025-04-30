@@ -244,7 +244,7 @@
 
    - The triggers that will be sent to the payload will be the value which would be the image of the repository and within the repo.
 
-   - ![picture of payload in hooks.json]()
+   - ![picture of payload in hooks.json](payloadtriggercorrect.jpg)
 
     
 
