@@ -213,12 +213,24 @@
 
   - ![curlprocess](curllocalhostrefresh.jpg)
 
-  - ![hooklogs](hookslogsaftercurl.jpg)
 
  - ![containerworking](refreshcontainernewscriptworking.jpg)
    
 
-  - Picture of dockerhub
+  - For some reason my webhook was grabbing the latest image but dockerhub was having a issue showing the success with the webhook
+   so I ran the command ```docker ps -a``` after curl to see if the image already existed. Once I ran the curl command I got some new information
+   from the ``` webhook -hooks hooks.json -verbose``` command:
+
+   - ![picture of new logs]()
+
+  - This is what I got from the ```docker ps -a``` command:
+
+   - ![picture of docker ps]()
+
+   - Then after some digging I realized since I didn't have an Elastic IP it changed everytime and I realized that's why my webhook didn't
+     work!
+
+   -![picture of dockerhub success]()
 
   - Link to hooksfile: https://github.com/WSU-kduncan/ceg3120-cicd-chaizedelo25/blob/main/hooks.json
 
@@ -227,7 +239,9 @@
   - The payload sender I'm going to choose is Dockerhub. I'm going to use dockerhub cause I feel dockerhub allows for more
   control on how to set up the payload sender and more edit control since it happens a lot more frequently with dockerhub.
 
-  -
+   - 
+
+    
 
 
 
@@ -240,7 +254,18 @@
   - ![servicepicture](servicewebhookconfiguration.jpg)
 
 
-  - To enable the service  
+  - To enable the service to run after making changes to the service file run the command ```sudo systemctl restart webhook.service```
+     - This makes sure that the webhook.service file is in sync with the new changes made to the service file and boots with
+       the new changes.
+
+  - Then run the command ```sudo systemctl start webhook.service```. This starts the service. 
+
+  - To verify that the that the webhook service is capturing payloads and triggering the script by running the command
+    ```sudo systemctl status webhook.service``` and the command ```journalctl -f -u webhook.service```. The first command
+       will show if the webhook.service is enabled and the second will show the logs of the webhooks service while the
+       curl commands being run to test.
+
+  - Link to webhook service file: 
   
 
 
