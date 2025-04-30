@@ -221,7 +221,7 @@
    so I ran the command ```docker ps -a``` after curl to see if the image already existed. Once I ran the curl command I got some new information
    from the ``` webhook -hooks hooks.json -verbose``` command:
 
-   - ![picture of new logs]()
+   - ![picture of new logs](newerimagedownloadedscript.jpg)
 
   - This is what I got from the ```docker ps -a``` command:
 
@@ -230,7 +230,7 @@
    - Then after some digging I realized since I didn't have an Elastic IP it changed everytime and I realized that's why my webhook didn't
      work!
 
-   -![picture of dockerhub success]()
+   -![picture of dockerhub success](dockerhubwebhookadded.jpg)
 
   - Link to hooksfile: https://github.com/WSU-kduncan/ceg3120-cicd-chaizedelo25/blob/main/hooks.json
 
