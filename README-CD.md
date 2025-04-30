@@ -239,7 +239,12 @@
   - The payload sender I'm going to choose is Dockerhub. I'm going to use dockerhub cause I feel dockerhub allows for more
   control on how to set up the payload sender and more edit control since it happens a lot more frequently with dockerhub.
 
-   - 
+   - To enable the selection to send payloads to the EC2 webhook listener in the hook.json file set up a trigger rule
+     section to know when the trigger rule is match to the string.
+
+   - The triggers that will be sent to the payload will be the value which would be the image of the repository and within the repo.
+
+   - ![picture of payload in hooks.json](payloadtriggercorrect.jpg)
 
     
 
