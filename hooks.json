@@ -1,6 +1,30 @@
 [
   {
     "id": "orange",
-    "execute-command": "/home/ubuntu/refreshcontainer.sh"
+    "execute-command": "/home/ubuntu/refreshcontainer.sh",
+    "trigger-rule": {
+      "and": [
+        {
+          "match":  {
+            "type": "value",
+            "parameter": {
+              "source": "payload",
+              "name": "repository.repo_name"
+            },
+            "value": "wsudeloach/banana"
+          }
+        },
+        {
+          "match": {
+            "type": "value",
+            "parameter": {
+              "source": "payload",
+              "name": "push_data.tag"
+            },
+            "value": "latest"
+          }
+        }
+      ]
+    }
   }
 ]
