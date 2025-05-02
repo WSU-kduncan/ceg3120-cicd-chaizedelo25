@@ -263,12 +263,15 @@
      - This makes sure that the webhook.service file is in sync with the new changes made to the service file and boots with
        the new changes.
 
-  - Then run the command ```sudo systemctl start webhook.service```. This starts the service. 
+  - Then run the command ```sudo systemctl start webhook.service```. This starts the service.
+  - ![webhookservicefile](webhookfiletrigger.jpg)
 
   - To verify that the that the webhook service is capturing payloads and triggering the script by running the command
     ```sudo systemctl status webhook.service``` and the command ```journalctl -f -u webhook.service```. The first command
        will show if the webhook.service is enabled and the second will show the logs of the webhooks service while the
        curl commands being run to test.
+
+  - ![journalctlsuccess](webhooktriggersuccess.jpg)
 
   - Link to webhook service file: 
   
